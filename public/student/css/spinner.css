@@ -1,0 +1,44 @@
+.spinner {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: dashed rgb(3, 135, 175);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 2s infinite;
+}
+.inner-spinner {
+  width: 25px;
+  height: 25px;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: dotted grey;
+  animation: inner-spin 1s infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes inner-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

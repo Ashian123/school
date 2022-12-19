@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Student</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="/student/lib/animate/animate.min.css" rel="stylesheet" />
+    <link
+      href="/student/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/student/lib/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="/student/lib/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/student/css/spinner.css" />
+    <link rel="stylesheet" href="/student/css/evo-calendar.min.css" />
+    <link rel="stylesheet" href="/student/css/grid-gallery.css" />
+    <link rel="stylesheet" href="/student/css/student.css" />
+    <link rel="stylesheet" href="/student/css/mobileresponse.css" />
+    <link
+      rel="stylesheet"
+      href="/student/css/evo-calendar.orange-coral.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div class="spinner"><div class="inner-spinner"></div></div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar Start -->
+      <nav
+        class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0"
+      >
+        <a href="#" class="navbar-brand">
+          <h3 class="m-0 text-primary" id="student_name">
+            <i class="fa fa-book-reader me-2"></i>
+            Student Name
+          </h3>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto">
+            <a href="/student/student_home" class="nav-item nav-link">Home</a>
+            <!-- <a href="#" id="student_calendar" class="nav-item nav-link"
+              >Calendar</a
+            > -->
+            <a href="#main_content" id="photo_gallery" class="nav-item nav-link"
+              >Gallery</a
+            >
+            <a
+              href="#main_content"
+              id="student_timeTable"
+              class="nav-item nav-link"
+              >Time Table</a
+            >
+            <a
+              href="#main_content"
+              id="student_vr_class"
+              class="nav-item nav-link"
+              >Virtual Class</a
+            >
+            <a href="#main_content" id="student_marks" class="nav-item nav-link"
+              >Progress report</a
+            >
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Fees</a
+              >
+              <div
+                class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0"
+              >
+                <a id="student_fees" href="#main_content" class="dropdown-item"
+                  >Fees Details</a
+                >
+                <a
+                  id="student_receipt"
+                  href="#main_content"
+                  class="dropdown-item"
+                  >Fee Receipt</a
+                >
+              </div>
+            </div>
+
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Learning</a
+              >
+              <div
+                class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0"
+              >
+                <a
+                  id="student_materials"
+                  href="#main_content"
+                  class="dropdown-item"
+                  >Materials</a
+                >
+                <a
+                  id="student_attendance"
+                  href="#main_content"
+                  class="dropdown-item"
+                  >Attendance</a
+                >
+              </div>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >Account</a
+              >
+              <div
+                class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0"
+              >
+                <a id="profile" class="dropdown-item">Profile</a>
+                <a href="/logout" class="dropdown-item">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+
+      <!-- Carousel Start -->
+      <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+          <div class="owl-carousel-item position-relative">
+            <img
+              class="img-fluid"
+              src="https://allea.org/wp-content/uploads/2019/06/shutterstock_520698799small.jpg"
+              alt=""
+            />
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+              style="background: rgba(0, 0, 0, 0.2)"
+            >
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h3
+                      class="display-5 text-white animated slideInDown mb-4"
+                      id="school_title_one"
+                    >
+                      The Best School
+                    </h3>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="owl-carousel-item position-relative">
+            <!-- src="https://brainconnection.brainhq.com/wp-content/uploads/2015/09/stop-1200x600.png" -->
+            <img
+              class="img-fluid"
+              src="https://allea.org/wp-content/uploads/2019/06/shutterstock_520698799small.jpg"
+              alt=""
+            />
+            <div
+              class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
+              style="background: rgba(0, 0, 0, 0.2)"
+            >
+              <div class="container">
+                <div class="row justify-content-start">
+                  <div class="col-10 col-lg-8">
+                    <h3
+                      class="display-5 text-white animated slideInDown mb-4"
+                      id="school_title_two"
+                    >
+                      Make A Brighter Future
+                    </h3>
+                    <p class="fs-5 fw-medium text-white mb-4 pb-2"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel End -->
+      <section class="features" id="main_content">
+        <div class="container-xxl py-5">
+          <div class="container">
+            <div
+              class="text-center mx-auto mb-5 wow fadeInUp"
+              data-wow-delay="0.1s"
+              style="max-width: 600px"
+            >
+              <h1 class="mb-3">General Events!</h1>
+              <p>
+                General events are applicable to all branch students of the
+                school
+              </p>
+            </div>
+            <div
+              class="owl-carousel testimonial-carousel wow fadeInUp"
+              data-wow-delay="0.1s"
+            >
+              <% var {events}=event;%> <% var { event_no, event_name,
+              f_event_date, event_details } = events; %> <%for(let i=1;i<=
+              event_no;i++){%>
+              <div class="testimonial-item bg-light rounded p-5">
+                <p class="fs-5"><%-event_details[`E_details_${i}`]-%></p>
+                <div
+                  class="d-flex align-items-center bg-white me-n5"
+                  style="border-radius: 50px 0 0 50px"
+                >
+                  <img
+                    class="img-fluid flex-shrink-0 rounded-circle"
+                    src="img/light.jpg"
+                    style="width: 90px; height: 90px"
+                  />
+                  <div class="ps-3">
+                    <h3 class="mb-1"><%-event_name[`E_name_${i}`]-%></h3>
+                    <span><%- f_event_date[`E_date_${i}`]-%></span>
+                  </div>
+                  <i
+                    class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"
+                  ></i>
+                </div>
+              </div>
+              <%}%>
+            </div>
+          </div>
+        </div>
+        <div class="container-xxl py-5">
+          <div class="container">
+            <div
+              class="text-center mx-auto mb-5 wow fadeInUp"
+              data-wow-delay="0.1s"
+              style="max-width: 600px"
+            >
+              <h1 class="mb-3">Specific Events!</h1>
+              <p>
+                Specific events are differ from one branch to another branch
+                students. It's not applicable to all branch students of the
+                school.
+              </p>
+            </div>
+            <div id="calendar"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonial End -->
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5">
+          <div class="row g-5">
+            <div class="col-lg-12 col-md-12" id="college_details"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                Copyright &copy; 2021
+                <a
+                  class="border-bottom"
+                  href="https://www.ashiantechnologies.com"
+                  >Ashian Technologies</a
+                >, All Right Reserved.
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="/student/student_home">Home</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- popup -->
+      <div class="popup">
+        <div class="close-btn">&times;</div>
+        <div class="card-display">
+          <!-- <div> -->
+
+          <h2 class="student-name">Change Password</h2>
+          <h3 class="course-name"></h3>
+          <!-- </div> -->
+        </div>
+
+        <div class="changePWD">
+          <input
+            type="text"
+            placeholder="*Old Password"
+            id="old_pwd"
+            class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+          />
+          <input
+            type="text"
+            placeholder="*New Password"
+            id="new_pwd"
+            class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+          />
+          <button type="button" id="change_pwd" class="btn btn-primary">
+            Change
+          </button>
+        </div>
+      </div>
+      <!-- popup -->
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/student/lib/wow/wow.min.js"></script>
+    <script src="/student/lib/easing/easing.min.js"></script>
+    <script src="/student/lib/waypoints/waypoints.min.js"></script>
+    <script src="/student/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="/student/lib/main.js"></script>
+    <!-- Template Javascript -->
+
+    <script defer src="/student/js/student.js"></script>
+    <script defer src="/student/js/evo-calendar.min.js"></script>
+    <script defer src="/student/js/calendar.js"></script>
+    <script defer src="/student/js/material.js"></script>
+    <script defer src="/student/js/grid-gallery.js"></script>
+    <script defer src="/student/js/timeTable.js"></script>
+    <script>
+      var data = `<%-JSON.stringify(data)-%>`;
+      var { userdata, college } = JSON.parse(data);
+      var [{ cand_name, course, course_title }] = userdata;
+      localStorage.setItem("cand_name", cand_name);
+      localStorage.setItem("course", course);
+      localStorage.setItem("course_title", course_title);
+      localStorage.setItem("user", "student");
+
+      var [
+        {
+          college_name,
+          college_place,
+          college_district,
+          college_state,
+          college_pin,
+          college_phone,
+          college_mail,
+        },
+      ] = college;
+      document.getElementById("college_details").innerHTML = ` 
+      <h3 class="text-white mb-4">Get In Touch</h3>
+              <p class="mb-2"><i class="fa fa-school me-3"></i>${
+                college_name || "School Name"
+              }</p>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-3"></i>${
+                  college_place || "123 Street"
+                },${college_district || "District"}
+                ,${college_state || "State"},${college_pin || "666666"}
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>${
+                  college_phone || "+012 345 67890"
+                }
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>${
+                  college_mail || "info@example.com"
+                }
+              </p>`;
+    </script>
+  </body>
+</html>

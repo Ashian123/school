@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+  .create-table {
+    max-width: 85%;
+    /* margin: 0 auto; */
+  }
+  .create-meeting {
+    margin: 15vh auto;
+  }
+  .create-meeting img {
+    width: 100%;
+  }
+  .meeting button {
+    width: 100%;
+  }
+  .table_inputs {
+    display: inline-grid;
+  }
+  .events,
+  .card,
+  .meeting {
+    max-width: 80%;
+  }
+  .show_table {
+    overflow: auto;
+    padding: 50px 0;
+  }
+  footer {
+    padding: 30px 0 10px 0;
+  }
+}

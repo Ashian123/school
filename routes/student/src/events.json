@@ -1,0 +1,27 @@
+{
+  "event_no": 4,
+  "event_name": {
+    "E_name_1": "Sports day",
+    "E_name_2": "Annual Exam ",
+    "E_name_3": "Cultural Day",
+    "E_name_4": "Cultural Day"
+  },
+  "event_date": {
+    "E_date_1": "2022-02-16",
+    "E_date_2": "2022-02-01",
+    "E_date_3": "2022-02-17",
+    "E_date_4": "2022-02-17"
+  },
+  "f_event_date": {
+    "E_date_1": "16-02-2022",
+    "E_date_2": "01-02-2022",
+    "E_date_3": "17-02-2022",
+    "E_date_4": "17-02-2022"
+  },
+  "event_details": {
+    "E_details_1": "Our college elated to welcome all of you to participate and celebrate the event",
+    "E_details_2": "Annual Exam",
+    "E_details_3": "Celebrate the Cultural Events and show your Greatest talents to all of us..",
+    "E_details_4": "Celebrate the Cultural Events and show your Greatest talents to all of us.."
+  }
+}

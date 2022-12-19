@@ -1,0 +1,73 @@
+Admin->
+admin
+Ashian@123
+
+	SAdmin->
+	sadmin
+	Ashian@123
+
+	ITAdmin->
+	itadmin
+	Ashian@123
+
+Staff Teacher->
+catvmc14
+Tvmc@123
+
+VIMA161813 -- Ashian@123
+JEEV322555 -- Ashian@123
+
+Student ->
+201901001125
+2021
+
+CANLMC14
+Nlmc@123
+-----finger pri machin ----
+admin details
+ID	: 11111
+Password : 123
+
+admin details
+ID	: 12345
+NAME : 12345
+PASS : 12345
+
+ping 192.168.29.200 -t
+
+
+stop port listing... cmd code
+npx kill-port 3306
+(or)
+tskill 9208 
+
+login : admin
+pass : admin
+
+MYSQL DETAILS...
+DB = attendance
+
+software login
+essl
+79195F54068C15E0DC4AAFDC97740DFC
+
+
+Oracl Database info 
+global database name : ashian
+pass : Ashian123
+pluggable database name : ashiandb
+
+
+sqlcmd -S DESKTOP-P1V6NE0\SQLEXPRESS -E
+USE [master]
+GO
+CREATE DATABASE ffprint ON 
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\etimetracklite1_DataC.mdf' ),
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\etimetracklite1_LogC.ldf' )
+ FOR ATTACH ;
+GO
+
+whoiam --- cmd command
+
+SQL user : sa
+SQL PASS : Ashian@123

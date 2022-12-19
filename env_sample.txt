@@ -1,0 +1,10 @@
+DATABASE=school
+DOMAIN_EMAIL_ID=ashian@gelogicproducts.in
+DOMAIN_EMAIL_PASSWORD=ashian_technologies
+HOST=localhost
+PASSWORD=
+SECRET=qwertyuioasdfghj
+USER=root
+ZOOM_API=96jSXst9R9Cv0wSRZmCFgA
+ZOOM_MAIL=rajakumaran14599@gmail.com
+ZOOM_SECRET=LRqczmVPnSISuWWjNdfgw6feIijSDEMqXPQI

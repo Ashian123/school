@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>TEACHER</title>
+    <!-- base:css -->
+    <!-- <link rel="stylesheet" href="vendors/typicons/typicons.css"> -->
+    <link rel="stylesheet" href="/admin-staff/css/typicons/typicons.css" />
+    <!-- <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css"> -->
+    <link rel="stylesheet" href="/admin-staff/css/bundle.base.css" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link
+      rel="stylesheet"
+      href="/admin-staff/css/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/admin-staff/css/vertical-layout-light/style.css"
+    />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="" />
+  </head>
+  <body class="sidebar-dark">
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex justify-content-center">
+          <div
+            class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100"
+          >
+            <a class="navbar-brand brand-logo" href="/staff/staff_home">
+              <!-- <img src="" alt=""/> -->
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="/staff/staff_home"
+              ><img src="" alt="logo"
+            /></a>
+            <button
+              class="navbar-toggler navbar-toggler align-self-center"
+              type="button"
+              data-toggle="minimize"
+            >
+              <span class="typcn typcn-th-menu"></span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
+        >
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-profile dropdown">
+              <i class="mdi mdi-account-circle"></i>
+              <img src="" alt="" hidden />
+              <span class="nav-profile-name">TEACHER</span>
+            </li>
+            <li class="nav-item nav-user-status dropdown">
+              <!-- <p class="mb-0">Last login was 23 hours ago.</p> -->
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-date dropdown">
+              <a
+                class="nav-link d-flex justify-content-center align-items-center"
+                href="javascript:;"
+              >
+                <h6 class="date mb-0" id="Currentdate"></h6>
+                <script>
+                  document.getElementById("Currentdate").innerText =
+                    new Date().toDateString();
+                </script>
+                <i class="typcn typcn-calendar"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown mr-0">
+              <a
+                class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center"
+                id="notificationDropdown"
+                href="#"
+                data-toggle="dropdown"
+              >
+                <i class="typcn typcn-eject mx-0"></i>
+                <!-- <span class="count"></span> -->
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="notificationDropdown"
+              >
+                <a class="dropdown-item" href="/staff/staffProfile">
+                  <i class="typcn typcn-user-add text-primary"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="/logout">
+                  <i class="typcn typcn-eject text-primary"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <%- include("staff_NavBar") -%>
+        <!-- partial -->
+        <div class="main-panel">
+          <!-- content-wrapper starts -->
+          <div class="content-wrapper">
+            <div class="row" id="scheduled_meeting"></div>
+          </div>
+
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="d-sm-flex justify-content-center justify-content-sm-between"
+                >
+                  <span
+                    class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+                    >Copyright &copy; 2021
+                    <a href="https://www.ashiantechnologies.com"
+                      >Ashian Technologies</a
+                    >. All rights reserved.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- base:js -->
+    <script src="/admin-staff/js/devs/bundle.base.js"></script>
+
+    <script src="/admin-staff/js/devs/off-canvas.js"></script>
+    <script src="/admin-staff/js/devs/hoverable-collapse.js"></script>
+    <script src="/admin-staff/js/devs/template.js"></script>
+    <!-- Custom js for this page-->
+    <script src="/admin-staff/js/devs/dashboard.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="/admin-staff/js/api/meeting_staff.js"></script>
+  </body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>ADMIN</title>
+    <!-- base:css -->
+    <!-- <link rel="stylesheet" href="vendors/typicons/typicons.css"> -->
+    <link rel="stylesheet" href="/admin-staff/css/typicons/typicons.css" />
+    <!-- <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css"> -->
+    <link rel="stylesheet" href="/admin-staff/css/bundle.base.css" />
+	<link rel="stylesheet" href="/admin-staff/css/select2.min.css" />
+	
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/css/bootstrap4/tail.select-default.css" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link
+      rel="stylesheet"
+      href="/admin-staff/css/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/admin-staff/css/vertical-layout-light/style.css"
+    />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="" />
+    <style>
+      thead {
+        position: sticky;
+        top: 0;
+        background: #282f3a;
+        color: white;
+      }
+      tfoot {
+        position: sticky;
+        bottom: 0;
+        background: #282f3a;
+        color: white;
+      }
+
+      thead,
+      tr {
+        text-align: center;
+      }
+
+      .table-responsive {
+        max-height: 65vh;
+        width: 100%;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        overflow: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+      }
+      .table-responsive::-webkit-scrollbar {
+        display: none;
+      }
+      .table-responsive tbody tr:hover {
+        cursor: pointer;
+        background-color: #b9c0b9;
+        color: white;
+      }
+      #TeacherModal {
+        overflow: auto;
+      }
+	  
+	  .tail-select {
+	  width:100%;
+	  }
+	  
+	#TeacherModal > div > div > div.modal-body > form > div:nth-child(2) > div:nth-child(2) > div > div > span {
+	width: 100% !important;
+	}	
+	  
+	  
+    </style>
+  </head>
+  <body class="sidebar-dark">
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex justify-content-center">
+          <div
+            class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100"
+          >
+            <a class="navbar-brand brand-logo" href="/admin/admin_home">
+              <!-- <img src="" alt=""/> -->
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="/admin/admin_home"
+              ><img src="" alt="logo"
+            /></a>
+            <button
+              class="navbar-toggler navbar-toggler align-self-center"
+              type="button"
+              data-toggle="minimize"
+            >
+              <span class="typcn typcn-th-menu"></span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
+        >
+          <ul class="navbar-nav mr-lg-2">
+            <li class="nav-item nav-profile dropdown">
+              <i class="mdi mdi-account-box"></i>
+              <img src="" alt="" hidden />
+              <span class="nav-profile-name">ADMIN</span>
+            </li>
+            <li class="nav-item nav-user-status dropdown">
+              <!-- <p class="mb-0">Last login was 23 hours ago.</p> -->
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item nav-date dropdown">
+              <a
+                class="nav-link d-flex justify-content-center align-items-center"
+                href="javascript:;"
+              >
+                <h6 class="date mb-0" id="Currentdate"></h6>
+                <script>
+                  document.getElementById("Currentdate").innerText =
+                    new Date().toDateString();
+                </script>
+                <i class="typcn typcn-calendar"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown mr-0">
+              <a
+                class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center"
+                id="notificationDropdown"
+                href="#"
+                data-toggle="dropdown"
+              >
+                <i class="typcn typcn-eject mx-0"></i>
+                <!-- <span class="count"></span> -->
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="notificationDropdown"
+              >
+                <a class="dropdown-item" href="/logout">
+                  <i class="typcn typcn-eject text-primary"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="typcn typcn-th-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <%- include("admin_NavBar")-%>
+        <!-- partial -->
+        <div class="main-panel">
+          <!-- content-wrapper starts -->
+          <div class="content-wrapper">
+            <div class="row">
+              <div
+                class="col-12 grid-margin active"
+                id="single"
+                data-tab-content
+              >
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Create/View Teachers</h4>
+					
+                    <form class="form-sample">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"
+                              >Subject Name</label
+                            >
+                            <div class="col-sm-9">
+                              <select class="form-control" id="Subject_name" >
+                              <option value="" disabled selected>Select Subject</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group" style="float: right">
+                            <button
+                              type="button"
+                              class="btn btn-outline-warning btn-icon-text"
+                              onclick="getTeachers()"
+                            >
+                              <i
+                                class="mdi mdi-account-multiple btn-icon-prepend"
+                              ></i>
+                              Get Teachers
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-success btn-icon-text"
+                              onclick="toggleModal('TeacherModal')"
+                            >
+                              <i
+                                class="mdi mdi-account-plus btn-icon-prepend"
+                              ></i>
+                              Create Teacher
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <p id="displaymsg"></p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Teacher Details</h4>
+                    <!-- <p class="card-description">
+                     
+                    </p> -->
+                    <div class="table-responsive">
+                      <table class="table teacher-table">
+                        <thead>
+                          <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Teacher ID</th>
+                            <th scope="col">Teacher Name</th>
+                            <th scope="col">Subject</th>
+                          </tr>
+                        </thead>
+                        <tbody id="teacher-details"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- content-wrapper ends -->
+
+          <!-- Modal window  -->
+          <div class="modal fade" id="TeacherModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <table class="table mb-3">
+                    <thead>
+                      <tr>
+                        <th>Teacher Details</th>
+                      </tr>
+                    </thead>
+                  </table>
+
+                  <form class="form-sample">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <select class="form-control" required id="Teacher_initial">
+                              <option value="" disabled>Salutation</option>
+                              <option value="Mr">Mr</option>
+                              <option value="Mrs">Mrs</option>
+                              <option value="Miss">Miss</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="Teacher_name"
+                              placeholder="Teacher Name"
+							  required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+					
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <select 
+                              class="form-control"
+                              id="primary_name_modal"
+							  placeholder = "Primary subject"
+							  required
+                            >
+                              <option value="" disabled selected>Primary Subject</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+					  
+					  
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <select
+                              class="form-control js-example-basic-multiple "
+                              id="Subject_name_modalss"
+							  required
+							  name = "Subject_names[]"
+							  multiple
+							  placeholder = "Subjects"
+                            >
+                              
+                            </select>
+                          </div>
+                        </div>
+                      </div>	
+					  
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="Qualification"
+                              placeholder="Qualification"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="Mobile_number"
+                              placeholder="Mobile Number"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="Email_ID"
+                              placeholder="Email ID"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="row" id="courseRow-Excel">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <select
+                              id="course_title_modal"
+                              class="form-control"
+                              onchange="course_from_modal()"
+                            >
+                              <option disabled="" selected="" value="">
+                                Class*
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <select
+                              name=""
+                              id="course_department_modal"
+                              form="for_report"
+                              class="form-control"
+                            >
+                              <option value="Section" disabled>Section</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="Teacher_ID"
+                              placeholder="Teacher ID"
+                              readonly
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <input
+                              <input
+                              type="text"
+                              class="form-control"
+                              id="Password"
+                              placeholder="Password"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <textarea
+                        class="form-control"
+                        id="Teacher_address"
+                        rows="4"
+                        placeholder="Address"
+                      ></textarea>
+                    </div>
+                    <div class="row" id="imageToggle">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="col-md-12">
+                            <img
+                              src=""
+                              class="form-control"
+                              id="blah"
+                              alt=""
+                              style="width: 100px; height: 90px"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <div class="form-group">
+                            <input
+                              type="file"
+                              name="img[]"
+                              class="file-upload-default"
+                              id="imgfile"
+                              accept=".png,.jpeg,.jpg"
+                              onchange="readURL(this)"
+                            />
+                            <div class="input-group col-md-12">
+                              <input
+                                type="text"
+                                class="form-control file-upload-info"
+                                disabled=""
+                                placeholder="Upload Image"
+                              />
+                              <span class="input-group-append">
+                                <button
+                                  class="file-upload-browse btn btn-dark btn-icon-text"
+                                  type="button"
+                                >
+                                  <i class="typcn typcn-upload"></i>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    data-dismiss="modal"
+                    style="margin-right: auto"
+                    id="deleteUser"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="Create_Teacher"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- deleteModal -->
+          <div class="modal fade" id="Delete_User" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <table class="table mt-3">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Press confirm Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                            style="width: 80%"
+                          >
+                            Cancel
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            id="confirmToDelete"
+                            class="btn btn-success"
+                            style="width: 80%"
+                          >
+                            Confirm
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <div class="modal-footer">
+              
+             
+            </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- deleteModal -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="card">
+              <div class="card-body">
+                <div
+                  class="d-sm-flex justify-content-center justify-content-sm-between"
+                >
+                  <span
+                    class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+                    >Copyright &copy; 2021
+                    <a href="https://www.ashiantechnologies.com"
+                      >Ashian Technologies</a
+                    >. All rights reserved.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- base:js -->
+    <script src="/admin-staff/js/devs/bundle.base.js"></script>
+    <script src="/admin-staff/js/devs/select2.min.js"></script>
+    <script src="/admin-staff/js/devs/select2.js"></script>
+    <script src="/admin-staff/js/devs/off-canvas.js"></script>
+    <script src="/admin-staff/js/devs/hoverable-collapse.js"></script>
+    <script src="/admin-staff/js/devs/template.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/js/tail.select-full.min.js"></script>
+    <!-- Custom js for this page-->
+    <script src="/admin-staff/js/devs/dashboard.js"></script>
+    <script src="/admin-staff/js/devs/file-upload.js"></script>
+    <!-- End custom js for this page-->
+    <script src="/admin-staff/js/api/TeacherDetails.js"></script>
+  </body>
+</html>
